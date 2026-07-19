@@ -1,7 +1,6 @@
-import React from 'react';
 import { Download } from 'lucide-react';
 import { GithubIcon as Github } from './Icons';
-import heroIllustration from '../assets/hero-illustration.png';
+import avatarImg from '../assets/avatar.webp';
 
 export default function Hero({ darkMode, t }) {
   const metrics = [
@@ -20,7 +19,7 @@ export default function Hero({ darkMode, t }) {
             <span className="inline-block text-gold-accent font-bold text-lg tracking-wider border-b-2 border-gold-accent pb-1">
               {t.hello}
             </span>
-            <h1 className="mt-4 text-4xl sm:text-6xl font-black tracking-tight leading-tight">
+            <h1 className="mt-4 text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
               MORTADHA <span className="text-gold-accent">AKKARI</span>
             </h1>
             <p className={`mt-2 text-xl font-semibold tracking-wide ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -35,7 +34,7 @@ export default function Hero({ darkMode, t }) {
           {/* Call to Actions */}
           <div className="flex flex-wrap gap-4 pt-4">
             <a
-              href="/cv.pdf"
+              href={`${import.meta.env.BASE_URL}cv.pdf`}
               download="Mortadha_Akkari_CV.pdf"
               className="inline-flex items-center justify-center px-6 py-3.5 border border-transparent text-base font-bold rounded-lg shadow-sm text-black bg-gold-accent hover:bg-gold-hover hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
             >
@@ -68,16 +67,25 @@ export default function Hero({ darkMode, t }) {
           </div>
         </div>
 
-        {/* Right Column: Illustration */}
-        <div className="lg:col-span-5 relative flex justify-center">
+        {/* Right Column: Profile photo */}
+        <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
           {darkMode && (
             <div className="absolute inset-0 bg-gold-accent/10 rounded-full filter blur-3xl w-72 h-72 m-auto -z-10"></div>
           )}
-          <img
-            src={heroIllustration}
-            alt="Developer working at desk Illustration"
-            className="w-full max-w-md lg:max-w-full rounded-2xl object-cover hover:scale-[1.02] transition-transform duration-300 shadow-2xl"
-          />
+          <div className="relative w-full max-w-xs sm:max-w-sm">
+            <div className={`absolute -inset-1 rounded-2xl bg-gradient-to-br from-gold-accent/60 via-gold-accent/20 to-transparent opacity-80 ${
+              darkMode ? '' : 'from-gold-accent/50'
+            }`} />
+            <img
+              src={avatarImg}
+              alt="Mortadha Akkari"
+              width={640}
+              height={640}
+              decoding="async"
+              fetchPriority="high"
+              className="relative w-full aspect-square rounded-2xl object-cover object-top border-2 border-gold-accent/40 shadow-2xl hover:scale-[1.02] transition-transform duration-300"
+            />
+          </div>
         </div>
       </div>
 

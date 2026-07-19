@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Send, CheckCircle, Mail, MessageSquare } from 'lucide-react';
+import { SECTION_SHELL, SECTION_BADGE } from '../utils/styles';
 
 export default function ContactForm({ darkMode, lang }) {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -24,6 +25,7 @@ export default function ContactForm({ darkMode, lang }) {
       successTitle: "Message Sent!",
       successSub: "Thank you for reaching out. I'll reply to you shortly at mortadha.akkari@outlook.fr.",
       sendAnother: 'Send Another Message',
+      emailDirectly: 'Or email directly:',
     },
     fr: {
       badge: 'Prendre Contact',
@@ -42,13 +44,15 @@ export default function ContactForm({ darkMode, lang }) {
       successTitle: 'Message Envoyé !',
       successSub: "Merci de m'avoir contacté. Je vous répondrai bientôt à mortadha.akkari@outlook.fr.",
       sendAnother: 'Envoyer un Autre Message',
+      emailDirectly: 'Ou écrivez-moi directement :',
     }
   };
 
   const l = labels[lang] || labels.en;
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -72,10 +76,10 @@ export default function ContactForm({ darkMode, lang }) {
   }`;
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20">
+    <section id="contact" className={SECTION_SHELL}>
       {/* Title */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center justify-center gap-2 text-gold-accent font-bold tracking-wider uppercase bg-gold-accent/5 px-4 py-2 rounded-full border border-gold-accent/15 mb-3">
+        <div className={SECTION_BADGE}>
           <MessageSquare className="w-5 h-5" />
           <span>{l.badge}</span>
         </div>
@@ -86,7 +90,7 @@ export default function ContactForm({ darkMode, lang }) {
       </div>
 
       <div className="max-w-2xl mx-auto">
-        <div className={`p-8 sm:p-10 rounded-2xl border transition-all duration-300 ${
+        <div className={`p-6 sm:p-8 lg:p-10 rounded-2xl border transition-all duration-300 ${
           darkMode
             ? 'bg-dark-card border-white/5 shadow-black/30'
             : 'bg-white border-black/5 shadow-gray-100'
@@ -171,9 +175,13 @@ export default function ContactForm({ darkMode, lang }) {
               </div>
 
               {/* Quick contact alternative */}
-              <div className={`flex items-center gap-2 text-xs ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
+              <div className={`flex flex-wrap items-center gap-2 text-xs ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
                 <Mail className="w-3.5 h-3.5 shrink-0" />
-                <span>Or email directly: <a href="mailto:mortadha.akkari@outlook.fr" className="text-gold-accent hover:underline font-semibold">mortadha.akkari@outlook.fr</a></span>
+                <span>{l.emailDirectly}{' '}
+                  <a href="mailto:mortadha.akkari@outlook.fr" className="text-gold-accent hover:underline font-semibold break-all">
+                    mortadha.akkari@outlook.fr
+                  </a>
+                </span>
               </div>
 
               <button

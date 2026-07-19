@@ -1,11 +1,11 @@
-import React from 'react';
 import { MapPin, Mail, Phone, GraduationCap, Cpu, Database, Globe, Layers } from 'lucide-react';
 import { GithubIcon as Github } from './Icons';
-import avatarImg from '../assets/avatar.png';
+import avatarImg from '../assets/avatar.webp';
+import { SECTION_SHELL, CARD_SHELL, cardSurface } from '../utils/styles';
 
 export default function AboutSkills({ darkMode, t }) {
   const contactInfo = [
-    { icon: <MapPin className="w-5 h-5 text-gold-accent" />, label: t.location, value: 'Soukra, Ariana, Tunisia' },
+    { icon: <MapPin className="w-5 h-5 text-gold-accent" />, label: t.location, value: t.locationValue },
     { icon: <Mail className="w-5 h-5 text-gold-accent" />, label: t.email, value: 'mortadha.akkari@outlook.fr', href: 'mailto:mortadha.akkari@outlook.fr' },
     { icon: <Phone className="w-5 h-5 text-gold-accent" />, label: t.phone, value: '+216 46 327 829', href: 'tel:+21646327829' },
     { icon: <Github className="w-5 h-5 text-gold-accent" />, label: t.github, value: 'github-mortadha', href: 'https://github.com/github-mortadha' },
@@ -35,24 +35,22 @@ export default function AboutSkills({ darkMode, t }) {
   ];
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20">
+    <section id="about" className={SECTION_SHELL}>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* Left Column: About Me Card */}
         <div className="lg:col-span-6 flex">
-          <div
-            className={`w-full p-8 sm:p-10 rounded-2xl border transition-all duration-300 hover:shadow-xl ${
-              darkMode
-                ? 'bg-dark-card border-white/5 shadow-black/20 hover:border-gold-accent/20'
-                : 'bg-white border-black/5 shadow-gray-100 hover:border-gold-accent/20'
-            }`}
-          >
+          <div className={`${CARD_SHELL} ${cardSurface(darkMode)}`}>
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
               {/* Profile Image with Ring */}
               <div className="relative shrink-0">
                 <div className="absolute inset-0 rounded-full border border-gold-accent animate-pulse"></div>
                 <img
                   src={avatarImg}
-                  alt="Mortadha Akkari Profile Picture"
+                  alt="Mortadha Akkari"
+                  width={96}
+                  height={96}
+                  loading="lazy"
+                  decoding="async"
                   className="w-24 h-24 rounded-full border-2 border-gold-accent object-cover bg-gray-900"
                 />
               </div>
@@ -117,13 +115,7 @@ export default function AboutSkills({ darkMode, t }) {
 
         {/* Right Column: Skills Grouped Chips */}
         <div id="skills" className="lg:col-span-6 flex scroll-mt-20">
-          <div
-            className={`w-full p-8 sm:p-10 rounded-2xl border transition-all duration-300 hover:shadow-xl ${
-              darkMode
-                ? 'bg-dark-card border-white/5 shadow-black/20 hover:border-gold-accent/20'
-                : 'bg-white border-black/5 shadow-gray-100 hover:border-gold-accent/20'
-            }`}
-          >
+          <div className={`${CARD_SHELL} ${cardSurface(darkMode)}`}>
             <div className="text-left mb-8">
               <h2 className="text-2xl font-bold tracking-tight">{t.skillsTitle}</h2>
               <p className={`text-sm mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>

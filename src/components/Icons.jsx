@@ -1,7 +1,5 @@
-import React from 'react';
-
-// Custom GitHub SVG component matching Lucide specifications
-export function GithubIcon({ className = "w-5 h-5", ...props }) {
+/** Custom GitHub SVG matching Lucide stroke style */
+export function GithubIcon({ className = 'w-5 h-5', ...props }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,8 +18,8 @@ export function GithubIcon({ className = "w-5 h-5", ...props }) {
   );
 }
 
-// Custom LinkedIn SVG component matching Lucide specifications
-export function LinkedinIcon({ className = "w-5 h-5", ...props }) {
+/** Custom LinkedIn SVG matching Lucide stroke style */
+export function LinkedinIcon({ className = 'w-5 h-5', ...props }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

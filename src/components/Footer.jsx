@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { LinkedinIcon as Linkedin, GithubIcon as Github } from './Icons';
 
@@ -16,11 +15,12 @@ export default function Footer({ darkMode, lang }) {
         { label: 'Experience', href: '#experience' },
         { label: 'Projects', href: '#projects' },
         { label: 'Education', href: '#education' },
-        { label: 'Contact Form', href: '#contact' },
+        { label: 'Contact', href: '#contact' },
         { label: 'FAQ', href: '#faq' },
       ],
       copyright: '© 2025 Mortadha Akkari. All rights reserved.',
       location: 'Soukra, Ariana, Tunisia',
+      remote: 'Soukra • Tunis • Remote',
     },
     fr: {
       role: 'Développeur Full-Stack',
@@ -34,11 +34,12 @@ export default function Footer({ darkMode, lang }) {
         { label: 'Expérience', href: '#experience' },
         { label: 'Projets', href: '#projects' },
         { label: 'Éducation', href: '#education' },
-        { label: 'Formulaire de Contact', href: '#contact' },
+        { label: 'Contact', href: '#contact' },
         { label: 'FAQ', href: '#faq' },
       ],
       copyright: '© 2025 Mortadha Akkari. Tous droits réservés.',
       location: 'Soukra, Ariana, Tunisie',
+      remote: 'Soukra • Tunis • Distant',
     },
   };
 
@@ -86,10 +87,8 @@ export default function Footer({ darkMode, lang }) {
           {/* Column 1: Brand */}
           <div className="space-y-4">
             <div>
-              <a href="#home" className="inline-flex items-center gap-1.5 font-extrabold text-xl tracking-wider">
-                <span className="text-gold-accent">MA</span>
-                <span className="text-white">MORTADHA</span>
-                <span className="text-gold-accent">AKKARI</span>
+              <a href="#home" className="inline-block font-black text-2xl tracking-wider text-gold-accent hover:opacity-90 transition-opacity">
+                MA
               </a>
               <p className="text-gold-accent font-semibold text-sm mt-1">{l.role}</p>
             </div>
@@ -183,7 +182,7 @@ export default function Footer({ darkMode, lang }) {
         <div className="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-600 text-xs">{l.copyright}</p>
           <p className="text-gray-700 text-xs font-semibold tracking-widest uppercase">
-            Soukra • Tunis • Remote
+            {l.remote}
           </p>
         </div>
       </div>

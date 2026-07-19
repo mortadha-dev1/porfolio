@@ -1,5 +1,5 @@
-import React from 'react';
 import { Briefcase, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
+import { SECTION_SHELL, SECTION_BADGE, cardSurface } from '../utils/styles';
 
 export default function Experience({ darkMode, t }) {
   const experiences = [
@@ -14,10 +14,10 @@ export default function Experience({ darkMode, t }) {
   ];
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20">
+    <section id="experience" className={SECTION_SHELL}>
       {/* Title */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center justify-center gap-2 text-gold-accent font-bold tracking-wider uppercase bg-gold-accent/5 px-4 py-2 rounded-full border border-gold-accent/15 mb-3">
+        <div className={SECTION_BADGE}>
           <Briefcase className="w-5 h-5" />
           <span>{t.badge}</span>
         </div>
@@ -31,17 +31,15 @@ export default function Experience({ darkMode, t }) {
         {experiences.map((exp, idx) => (
           <div key={idx} className="relative mb-12 last:mb-0 text-left">
             {/* Timeline dot */}
-            <span className="absolute -left-[31px] sm:-left-[39px] top-1.5 flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full bg-gold-accent ring-4 ring-dark-bg">
+            <span className={`absolute -left-[31px] sm:-left-[39px] top-1.5 flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full bg-gold-accent ring-4 ${
+              darkMode ? 'ring-[#0B0C10]' : 'ring-slate-50'
+            }`}>
               <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#0B0C10]"></span>
             </span>
 
             {/* Experience Card */}
             <div
-              className={`p-6 sm:p-8 rounded-2xl border transition-all duration-300 hover:scale-[1.01] hover:shadow-xl ${
-                darkMode
-                  ? 'bg-dark-card border-white/5 shadow-black/20 hover:border-gold-accent/20'
-                  : 'bg-white border-black/5 shadow-gray-100 hover:border-gold-accent/20'
-              }`}
+              className={`p-6 sm:p-8 rounded-2xl border transition-all duration-300 hover:scale-[1.01] hover:shadow-xl ${cardSurface(darkMode)}`}
             >
               {/* Header Info */}
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">

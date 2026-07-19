@@ -8,6 +8,7 @@ export const translations = {
       projects: 'Projects',
       education: 'Education',
       contact: 'Contact',
+      faq: 'FAQ',
     },
     hero: {
       hello: "Hello, I'm",
@@ -27,6 +28,7 @@ export const translations = {
       graduate: 'Computer Science Graduate',
       bio: 'Passionate software engineer specializing in developing modern responsive web interfaces, robust backend microservices, mobile apps, and video game architectures.',
       location: 'Location',
+      locationValue: 'Soukra, Ariana, Tunisia',
       email: 'Email',
       phone: 'Phone',
       github: 'GitHub',
@@ -102,7 +104,11 @@ export const translations = {
       sendEmail: 'Send Email',
       copyright: '© 2025 Mortadha Akkari. All rights reserved.',
       tagline: 'Tunis • Soukra • Remote Work Enabled',
-    }
+      remote: 'Soukra • Tunis • Remote',
+    },
+    contact: {
+      emailDirectly: 'Or email directly:',
+    },
   },
   fr: {
     nav: {
@@ -113,6 +119,7 @@ export const translations = {
       projects: 'Projets',
       education: 'Éducation',
       contact: 'Contact',
+      faq: 'FAQ',
     },
     hero: {
       hello: 'Bonjour, je suis',
@@ -132,6 +139,7 @@ export const translations = {
       graduate: 'Diplômé en Informatique',
       bio: "Passionné par l'ingénierie logicielle avec un intérêt marqué pour la création de plateformes interactives, d'interfaces web adaptatives, d'APIs robustes et de mécaniques de jeux.",
       location: 'Localisation',
+      locationValue: 'Soukra, Ariana, Tunisie',
       email: 'E-mail',
       phone: 'Téléphone',
       github: 'GitHub',
@@ -207,6 +215,10 @@ export const translations = {
       sendEmail: 'Envoyer un Email',
       copyright: '© 2025 Mortadha Akkari. Tous droits réservés.',
       tagline: 'Tunis • Soukra • Télétravail Activé',
-    }
+      remote: 'Soukra • Tunis • Distant',
+    },
+    contact: {
+      emailDirectly: 'Ou écrivez-moi directement :',
+    },
   }
 };

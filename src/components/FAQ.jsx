@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { HelpCircle, ChevronDown } from 'lucide-react';
+import { SECTION_SHELL, SECTION_BADGE } from '../utils/styles';
 
 export default function FAQ({ darkMode, lang }) {
   const [openIdx, setOpenIdx] = useState(null);
@@ -72,10 +73,10 @@ export default function FAQ({ darkMode, lang }) {
   const l = content[lang] || content.en;
 
   return (
-    <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20">
+    <section id="faq" className={SECTION_SHELL}>
       {/* Title */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center justify-center gap-2 text-gold-accent font-bold tracking-wider uppercase bg-gold-accent/5 px-4 py-2 rounded-full border border-gold-accent/15 mb-3">
+        <div className={SECTION_BADGE}>
           <HelpCircle className="w-5 h-5" />
           <span>{l.badge}</span>
         </div>
@@ -113,7 +114,7 @@ export default function FAQ({ darkMode, lang }) {
             </button>
 
             {/* Collapsible answer */}
-            <div className={`overflow-hidden transition-all duration-300 ${openIdx === idx ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
+            <div className={`overflow-hidden transition-all duration-300 ${openIdx === idx ? 'max-h-[28rem] opacity-100' : 'max-h-0 opacity-0'}`}>
               <div className={`px-6 pb-5 text-sm leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                 {item.a}
               </div>
