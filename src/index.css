@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #0B0C10;
+  --color-dark-card: #15171E;
+  --color-gold-accent: #FFC107;
+  --color-gold-hover: #E0A800;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-dark-bg);
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
