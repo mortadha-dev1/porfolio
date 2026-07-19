@@ -21,7 +21,7 @@ export const PERSON = {
   url: SITE_URL,
   image: `${SITE_URL}/og-image.webp`,
   sameAs: [
-    'https://github.com/github-mortadha',
+    'https://github.com/mortadha-dev1',
     'https://www.linkedin.com/in/mortadha-akkari-93b9853a1/',
   ],
   address: {

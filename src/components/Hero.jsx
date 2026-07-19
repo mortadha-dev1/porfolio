@@ -52,7 +52,7 @@ export default function Hero({ darkMode, t }) {
               {t.contactForm}
             </a>
             <a
-              href="https://github.com/github-mortadha"
+              href="https://github.com/mortadha-dev1"
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center justify-center px-6 py-3.5 border text-base font-bold rounded-lg hover:scale-105 active:scale-95 transition-all duration-200 ${

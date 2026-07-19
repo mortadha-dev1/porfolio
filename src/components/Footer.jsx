@@ -18,7 +18,7 @@ export default function Footer({ darkMode, lang }) {
         { label: 'Contact', href: '#contact' },
         { label: 'FAQ', href: '#faq' },
       ],
-      copyright: '© 2025 Mortadha Akkari. All rights reserved.',
+      copyright: '© 2026 Mortadha Akkari. All rights reserved.',
       location: 'Soukra, Ariana, Tunisia',
       remote: 'Soukra • Tunis • Remote',
     },
@@ -37,7 +37,7 @@ export default function Footer({ darkMode, lang }) {
         { label: 'Contact', href: '#contact' },
         { label: 'FAQ', href: '#faq' },
       ],
-      copyright: '© 2025 Mortadha Akkari. Tous droits réservés.',
+      copyright: '© 2026 Mortadha Akkari. Tous droits réservés.',
       location: 'Soukra, Ariana, Tunisie',
       remote: 'Soukra • Tunis • Distant',
     },
@@ -64,8 +64,8 @@ export default function Footer({ darkMode, lang }) {
     },
     {
       icon: <Github className="w-4 h-4 text-gold-accent shrink-0 mt-0.5" />,
-      value: 'github-mortadha',
-      href: 'https://github.com/github-mortadha',
+      value: 'mortadha-dev1',
+      href: 'https://github.com/mortadha-dev1',
     },
     {
       icon: <MapPin className="w-4 h-4 text-gold-accent shrink-0 mt-0.5" />,
@@ -107,7 +107,7 @@ export default function Footer({ darkMode, lang }) {
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href="https://github.com/github-mortadha"
+                href="https://github.com/mortadha-dev1"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"

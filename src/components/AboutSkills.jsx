@@ -8,7 +8,7 @@ export default function AboutSkills({ darkMode, t }) {
     { icon: <MapPin className="w-5 h-5 text-gold-accent" />, label: t.location, value: t.locationValue },
     { icon: <Mail className="w-5 h-5 text-gold-accent" />, label: t.email, value: 'mortadha.akkari@outlook.fr', href: 'mailto:mortadha.akkari@outlook.fr' },
     { icon: <Phone className="w-5 h-5 text-gold-accent" />, label: t.phone, value: '+216 46 327 829', href: 'tel:+21646327829' },
-    { icon: <Github className="w-5 h-5 text-gold-accent" />, label: t.github, value: 'github-mortadha', href: 'https://github.com/github-mortadha' },
+    { icon: <Github className="w-5 h-5 text-gold-accent" />, label: t.github, value: 'mortadha-dev1', href: 'https://github.com/mortadha-dev1' },
   ];
 
   const skillGroups = [
